@@ -37,18 +37,6 @@ namespace Wabbajack
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            if (IsAdmin())
-            {
-                var messageBox = MessageBox.Show("Don't run Wabbajack as Admin!", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-                if (messageBox == MessageBoxResult.OK)
-                {
-                    Environment.Exit(1);
-                }
-                else
-                {
-                    Environment.Exit(1);
-                }
-            }
 
             RxApp.MainThreadScheduler = new DispatcherScheduler(Dispatcher.CurrentDispatcher);
             _host = Host.CreateDefaultBuilder(Array.Empty<string>())
